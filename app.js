@@ -20,9 +20,8 @@ const Joke = mongoose.model("Joke", jokesSchema);
 app.get("/", (req, res) => {
   Joke.find({}, (err, foundJokes) => {
     if (!err) {
-      let joke = foundJokes[Math.floor(Math.random() * foundJokes.length)];
-
-      res.send(joke);
+      let randomJoke = foundJokes[Math.floor(Math.random() * foundJokes.length)];
+      res.send(randomJoke.joke);
     } else {
       res.send(err);
     }
