@@ -20,20 +20,20 @@ const jokesSchema = new mongoose.Schema({
 
 const Joke = mongoose.model("Joke", jokesSchema);
 
-
-app.get("/", (req, res) => {
+app.get("/joke", (req, res) => {
   Joke.find({}, (err, foundJokes) => {
     if (!err) {
-      res.send(foundJokes);
-      //   let randomJoke = foundJokes[Math.floor(Math.random() * foundJokes.length)];
-      //   res.send(randomJoke.joke);
+      let randomJoke =
+        foundJokes[Math.floor(Math.random() * foundJokes.length)];
+      res.send(randomJoke.joke);
     } else {
       res.send(err);
     }
   });
-
 });
 
-app.listen(3000, () => {
-  console.log("Server started on port 3000.");
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
