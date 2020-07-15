@@ -25,7 +25,7 @@ app.get("/joke", (req, res) => {
     if (!err) {
       let randomJoke =
         foundJokes[Math.floor(Math.random() * foundJokes.length)];
-      res.send(randomJoke.joke);
+      res.send(randomJoke);
     } else {
       res.send(err);
     }
