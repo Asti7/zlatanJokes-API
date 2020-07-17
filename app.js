@@ -1,10 +1,42 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const ejs = require('ejs');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.set('view engine','ejs');
+app.use(express.static("public"));
+
+
+app.get("/",(req,res)=>{
+  res.sendFile(__dirname + "/index.html");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----------BACKEND WORK --------------------------
 
 mongoose.connect(
   "mongodb+srv://admin-Astitva:Apexpredator7@zlatanjokes.j5741.mongodb.net/zlatanJokeDB?retryWrites=true&w=majority",
@@ -32,8 +64,12 @@ app.get("/joke", (req, res) => {
   });
 });
 
+//----------BACKEND WORK --------------------------
+
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 3000;
 }
-app.listen(port);
+app.listen(port,()=>{
+  console.log("Server started on required port.");
+});
