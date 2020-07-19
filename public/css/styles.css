@@ -28,3 +28,16 @@ a {
 .information{
     margin-top: 40px;
 }
+
+footer{
+    text-align: center;
+    margin-top: 10%;
+}
+
+pre{
+    font-size: 18px;
+}
+
+button{
+    margin-left: 30px;
+}

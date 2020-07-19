@@ -11,29 +11,9 @@ app.use(express.static("public"));
 
 
 app.get("/",(req,res)=>{
-  res.sendFile(__dirname + "/index.html");
+  // res.sendFile(__dirname + "/index.html");
+  res.render("index");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //----------BACKEND WORK --------------------------
@@ -62,6 +42,11 @@ app.get("/joke", (req, res) => {
       res.send(err);
     }
   });
+});
+
+app.use(function (req, res, next) {
+  res.status(404);
+  res.send("404: File Not Found");
 });
 
 //----------BACKEND WORK --------------------------
