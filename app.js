@@ -44,9 +44,8 @@ app.get("/joke", (req, res) => {
   });
 });
 
-app.use(function (req, res, next) {
-  res.status(404);
-  res.send("404: File Not Found");
+app.use("/k",(req, res)=> {
+  res.render("404");
 });
 
 //----------BACKEND WORK --------------------------
