@@ -5,40 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/styles.css">
     <title>Zlatan Jokes</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script src="/node_modules/axios/dist/axios.min.js"></script>
+
+
+
+
 </head>
 
 <body>
     <div class="picture">
         <img class="picture_main" src="/images/zlatan.jpg" alt="">
         <div>
-            <h1>All hail Zlatan !</h3>
-                <p>A free REST API for random fan made Zlatan Ibrahimovic jokes.</p>
+            <h1>All hail Zlatan !</h1>
+            <p>A free REST API for random fan made Zlatan Ibrahimovic jokes.</p>
         </div>
 
     </div>
 
     <div class="content">
         <div class="api">
-            <h2>API Usage</h4>
-                <p>GET <a href="http://www.zlatanjokes.site/joke">http://www.zlatanjokes.site/joke</a>
-                
-                <button><i class="fas fa-redo"></i></button>
-                </p>
-                
-                <p>{</p>
-                <pre>  joke: </pre>
-                <p>}</p>
+            <h2>API Usage</h2>
+            <p>GET <a href="http://www.zlatanjokes.site/joke">http://www.zlatanjokes.site/joke</a>
+
+                <button id="button"><i class="fas fa-redo"></i></button>
+            </p>
+
+            <p>{</p>
+            <pre id="joke">  joke: </pre>
+            <p>}</p>
         </div>
         <div class="information">
             <p>Use the API limitedly as the backend is hosted on free tier servers, I am broke AF 😅 </p>
         </div>
     </div>
 
-    </div>
+
+<script>
+
+    const axios = require('axios');
+    const button = document.getElementById("button");
+    button.addEventListener("click",()=>{
+
+        axios.get('http://www.zlatanjokes.site/joke')
+        .then(response =>{
+            var joke = response.data.joke;
+            document.getElementById("joke").innerHTML = " joke: "+joke;
+
+        })
+        .catch(error => console.log(error));
+    
+    });
+</script>
 </body>
 <footer>
     <p>Made over 5 cups of ☕️ by <a href="https://github.com/Asti7">Astitva</a></p>

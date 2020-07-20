@@ -16,6 +16,9 @@ app.get("/",(req,res)=>{
 });
 
 
+
+
+
 //----------BACKEND WORK --------------------------
 
 mongoose.connect(
@@ -44,11 +47,15 @@ app.get("/joke", (req, res) => {
   });
 });
 
-app.use("/k",(req, res)=> {
+
+
+// 404 page 
+app.use("*",(req, res)=> {
   res.render("404");
 });
 
-//----------BACKEND WORK --------------------------
+
+
 
 let port = process.env.PORT;
 if (port == null || port == "") {
