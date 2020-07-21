@@ -53,8 +53,10 @@ footer {
 
 pre {
   font-size: 18px;
+  min-width: 50px;
 }
 
 button {
   margin-left: 30px;
 }
+

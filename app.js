@@ -16,9 +16,6 @@ app.get("/",(req,res)=>{
 });
 
 
-
-
-
 //----------BACKEND WORK --------------------------
 
 mongoose.connect(
