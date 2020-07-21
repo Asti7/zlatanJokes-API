@@ -7,7 +7,7 @@
 <h3>API Usage</h3>
 
 ```
-GET [Link]( http://www.zlatanjokes.site/joke)    
+GET http://www.zlatanjokes.site/joke  
 
 {
   "joke": "When Zlatan goes to your place to visit you, you're the guest."
