@@ -2,6 +2,10 @@
 
 <h3>A free REST API for random fan made Zlatan Ibrahimovic jokes.</h3>
 
+---
+
+<h3>API Usage</h3>
+
 ```
 GET http://www.zlatanjokes.site/joke
 
