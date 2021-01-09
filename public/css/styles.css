@@ -58,5 +58,6 @@ pre {
 
 button {
   margin-left: 30px;
+  cursor: pointer;
 }
 
