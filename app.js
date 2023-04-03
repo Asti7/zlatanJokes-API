@@ -19,8 +19,7 @@ app.get("/",(req,res)=>{
 //----------BACKEND WORK --------------------------
 
 mongoose.connect(
-  // data base connectivity redacted for security reasons !
-  "*******",
+  "mongodb+srv://admin-Astitva:Apexpredator7@zlatanjokes.j5741.mongodb.net/zlatanJokeDB?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
